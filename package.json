@@ -1,0 +1,24 @@
+{
+  "name": "starbucks-tip-calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon utilities/index.js",
+    "start-react": "webpack serve"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "@material-ui/core": "^4.11.2",
+    "babel-loader": "^8.2.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
