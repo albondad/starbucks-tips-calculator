@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node application.js",
+    "start": "webpack && node application.js",
     "start-react": "webpack serve",
     "webpack-build": "webpack"
   },
