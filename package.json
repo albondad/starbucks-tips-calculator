@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon utilities/index.js",
-    "start-react": "webpack serve"
+    "start": "webpack",
+    "start-react": "webpack serve",
+    "webpack-build": "webpack"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
