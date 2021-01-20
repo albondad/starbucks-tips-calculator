@@ -101,23 +101,28 @@ const Application = () => {
         const name = textFieldValueName;
         const hours = textFieldValueHours;
         const newEmployees = [...employees];
-        console.log('name', name === '')
-        console.log('hours', hours === '')
-        console.log (hours !== "" && name !== "")
-        newEmployees.push({
-            name,
-            hours
-        });
+
+        if (name !== '' && hours !=='') {
+            newEmployees.push({
+                name,
+                hours
+            });
+        }
+
         const newTotalHours = getTotalHours(newEmployees);
         const newTipRate = getTipRate(totalTips, newTotalHours);
+        const employeesWithActualTipValues = getEmployeesWithActualTipValues(newEmployees, newTipRate);
+        const employeesWithRoundedTipValues = getEmployeesWithRoundedTipValues(newEmployees, newTipRate);
+        const newTotalActualTipValues = getTotalActualTipValues(employeesWithActualTipValues);
+        const newTotalRoundedTipValues = getTotalRoundedTipValues(employeesWithRoundedTipValues);
         
         setTextFieldValueName('');
         setTextFieldValueHours('');
         setEmployees(newEmployees);
         setTotalHours(newTotalHours);
         setTipRate(newTipRate)
-        setTotalActualTipValues(getTotalActualTipValues(getEmployeesWithActualTipValues(newEmployees, newTipRate)))
-        setTotalRoundedTipValues(getTotalRoundedTipValues(getEmployeesWithRoundedTipValues(newEmployees, newTipRate)))
+        setTotalActualTipValues(newTotalActualTipValues);
+        setTotalRoundedTipValues(newTotalRoundedTipValues);
     }
 
     return(
