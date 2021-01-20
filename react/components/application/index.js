@@ -92,9 +92,19 @@ const Application = () => {
             '100': textFieldValueNumberOf100s
         }
         const newTotalTips = getTotalTips(newBills);
-
+        const newTipRate = getTipRate(newTotalTips, totalHours);
+        const employeesWithActualTipValues = getEmployeesWithActualTipValues(employees, newTipRate);
+        const employeesWithRoundedTipValues = getEmployeesWithRoundedTipValues(employees, newTipRate);
+        const newTotalActualTipValues = getTotalActualTipValues(employeesWithActualTipValues);
+        const newTotalRoundedTipValues = getTotalRoundedTipValues(employeesWithRoundedTipValues);
+        
         setBills(newBills);
         setTotalTips(newTotalTips)
+        setTextFieldValueName('');
+        setTextFieldValueHours('');
+        setTipRate(newTipRate)
+        setTotalActualTipValues(newTotalActualTipValues);
+        setTotalRoundedTipValues(newTotalRoundedTipValues);
     }
 
     const buttonOnClickAddPerson = () => {
