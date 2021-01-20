@@ -16,6 +16,7 @@ import getTotalActualTipValues from '../../../utilities/get-total-actual-tip-val
 import getTotalHours from '../../../utilities/get-total-hours';
 import getTotalRoundedTipValues from '../../../utilities/get-total-rounded-tip-values';
 import getTotalTips from '../../../utilities/get-total-tips';
+import { GlobalStyle } from './styled-components';
 
 
 const Application = () => {
@@ -125,8 +126,9 @@ const Application = () => {
 
     return(
         <>
+        <div>test</div>
+        <GlobalStyle />
             <Grid container>
-
 
                 {/*BILL INFORMATION FORM*/}
                 <Grid item xs={12}>
