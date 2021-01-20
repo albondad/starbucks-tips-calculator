@@ -11,9 +11,6 @@ const getEmployeesWithActualTipValues = (employees, tipRate) => {
         })
     });
 
-    
-    console.log('test2', typeof employeesWithActualTipValues)
-
     return employeesWithActualTipValues;
 }
 
