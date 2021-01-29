@@ -1,5 +1,6 @@
+import Application from '../components/application'
 const Index = () => {
-    return <div>index</div>
+    return <Application />
 }
 
 export default Index;
