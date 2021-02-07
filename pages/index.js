@@ -1,7 +1,7 @@
-import Application from '../components/application';
+import * as Pages from '../components/pages';
 
-const Index = () => {
-    return <Application />
+const Main = () => {
+    return <Pages.Main />
 }
 
-export default Index;
+export default Main;

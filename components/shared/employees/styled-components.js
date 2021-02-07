@@ -39,7 +39,7 @@ export const EmployeesHeadRoundedTipValue = styled.div`
 
 export const EmployeesHeadBillInformation = styled.div`
     flex-basis: 0;
-    flex-grow: 2;
+    flex-grow: 1.5;
     font-size: 12px;
     font-weight: 700;
 `
@@ -95,7 +95,7 @@ export const EmployeesRowRoundedTipValue = styled.div`
 
 export const EmployeesRowBillInformation = styled.div`
     flex-basis: 0;
-    flex-grow: 2;
+    flex-grow: 1.5;
     color: #ffffff;
 `
 

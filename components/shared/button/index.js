@@ -1,7 +1,7 @@
 import * as StyledComponents from './styled-components';
 
-export const Button = () => {
+export const Button = (props) => {
     return (
-        <StyledComponents.Button>test</StyledComponents.Button>
+        <StyledComponents.Button>{props.label}</StyledComponents.Button>
     )
 }
