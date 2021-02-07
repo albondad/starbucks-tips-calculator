@@ -10,22 +10,23 @@ export const Main = () => {
             <StyledComponents.MainForms>
                 <StyledComponents.MainFormsItem>
                         <Shared.Card
-                            label='test'
+                            label='Add Employees'
+                            iconName="personAdd"
                         >
                         <StyledComponents.MainFormsItemBody>
                             <StyledComponents.MainFormsItemBodyInput>
                                 <Shared.Input 
-                                    label='test'
+                                    label='Name'
                                 />
                             </StyledComponents.MainFormsItemBodyInput>
                             <StyledComponents.MainFormsItemBodyInput>
                                 <Shared.Input 
-                                    label='asfasdfsadfsadfasfd'
+                                    label='Hours'
                                 />
                             </StyledComponents.MainFormsItemBodyInput>
                             <StyledComponents.MainFormsItemBodyButton>
                                 <Shared.Button
-                                    label='test'
+                                    label='Add'
                                 />
                             </StyledComponents.MainFormsItemBodyButton>
                             
@@ -35,32 +36,43 @@ export const Main = () => {
 
                 <StyledComponents.MainFormsItem>
                         <Shared.Card
-                            label='test'
+                            label='Update Bill Information'
+                            iconName="attachMoney"
                         >
                         <StyledComponents.MainFormsItemBody>
                             <StyledComponents.MainFormsItemBodyInput>
                                 <Shared.Input 
-                                    label='test'
+                                    label='1s'
                                 />
                             </StyledComponents.MainFormsItemBodyInput>
                             <StyledComponents.MainFormsItemBodyInput>
                                 <Shared.Input 
-                                    label='asfasdfsadfsadfasfd'
+                                    label='5s'
                                 />
                             </StyledComponents.MainFormsItemBodyInput>
                             <StyledComponents.MainFormsItemBodyInput>
                                 <Shared.Input 
-                                    label='asfasdfsadfsadfasfd'
+                                    label='10s'
                                 />
                             </StyledComponents.MainFormsItemBodyInput>
                             <StyledComponents.MainFormsItemBodyInput>
                                 <Shared.Input 
-                                    label='asfasdfsadfsadfasfd'
+                                    label='20s'
+                                />
+                            </StyledComponents.MainFormsItemBodyInput>
+                            <StyledComponents.MainFormsItemBodyInput>
+                                <Shared.Input 
+                                    label='50s'
+                                />
+                            </StyledComponents.MainFormsItemBodyInput>
+                            <StyledComponents.MainFormsItemBodyInput>
+                                <Shared.Input 
+                                    label='100s'
                                 />
                             </StyledComponents.MainFormsItemBodyInput>
                             <StyledComponents.MainFormsItemBodyButton>
                                 <Shared.Button
-                                    label='test'
+                                    label='Update'
                                 />
                             </StyledComponents.MainFormsItemBodyButton>
                             
@@ -71,7 +83,8 @@ export const Main = () => {
 
             <StyledComponents.MainStatistics>
                 <Shared.Card
-                    label="Test"
+                    label="Statistics"
+                    iconName='barChart'
                 >
                     <StyledComponents.MainStatisticsBody>
                         <StyledComponents.MainStatisticsBodyItem>
@@ -104,7 +117,8 @@ export const Main = () => {
             </StyledComponents.MainStatistics>
             <StyledComponents.MainEmployees>
                 <Shared.Card
-                    label="Test"
+                    label="Employees"
+                    iconName='groups'
                 >
                     <Shared.Employees />
                 </Shared.Card>

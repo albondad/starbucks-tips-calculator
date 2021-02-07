@@ -20,6 +20,7 @@ export const MainForms = styled.div`
 `
 
 export const MainFormsItem = styled.div`
+    flex-basis: 0;
     flex-grow: 1;
     :first-of-type {
         padding-right: 16px;
