@@ -1,4 +1,4 @@
-import { Icon } from '..'
+import * as Shared from '..'
 import * as StyledComponents from './styled-components';
 
 export const Employees = (props) => {
@@ -22,9 +22,10 @@ export const Employees = (props) => {
                     <StyledComponents.EmployeesRowBillInformationHead>
                         Bill Information
                         <StyledComponents.EmployeesRowBillInformationHeadIcon>
-                            <Icon 
+                            <Shared.Icon 
                                 name="expandLess"
                                 color="#ffffff"
+                                size="24px"
                             />
                         </StyledComponents.EmployeesRowBillInformationHeadIcon>
                     </StyledComponents.EmployeesRowBillInformationHead>
@@ -36,9 +37,10 @@ export const Employees = (props) => {
                     </StyledComponents.EmployeesRowBillInformationBody>
                 </StyledComponents.EmployeesRowBillInformation>
                 <StyledComponents.EmployeesRowDelete>
-                    <Icon 
+                    <Shared.Icon 
                         name="trash"
                         color="#ffffff"
+                        size="24px"
                     />
                 </StyledComponents.EmployeesRowDelete>
             </StyledComponents.EmployeesRow>
@@ -52,17 +54,19 @@ export const Employees = (props) => {
                     <StyledComponents.EmployeesRowBillInformationHead>
                         Bill Information
                         <StyledComponents.EmployeesRowBillInformationHeadIcon>
-                            <Icon 
+                            <Shared.Icon 
                                 name="expandLess"
                                 color="#ffffff"
+                                size="24px"
                             />
                         </StyledComponents.EmployeesRowBillInformationHeadIcon>
                     </StyledComponents.EmployeesRowBillInformationHead>
                 </StyledComponents.EmployeesRowBillInformation>
                 <StyledComponents.EmployeesRowDelete>
-                    <Icon 
+                    <Shared.Icon 
                         name="trash"
                         color="#ffffff"
+                        size="24px"
                     />
                 </StyledComponents.EmployeesRowDelete>
             </StyledComponents.EmployeesRow>
