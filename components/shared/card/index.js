@@ -1,3 +1,4 @@
+import * as Shared from '..'
 import * as StyledComponents from './styled-components';
 
 export const Card = (props) => {
@@ -5,7 +6,13 @@ export const Card = (props) => {
         <StyledComponents.Card> 
             <StyledComponents.CardHeader>
                 <StyledComponents.CardHeaderLabel>{props.label}</StyledComponents.CardHeaderLabel> 
-                <StyledComponents.CardHeaderIcon>{props.icon}</StyledComponents.CardHeaderIcon> 
+                <StyledComponents.CardHeaderIcon>
+                    <Shared.Icon
+                        name={props.iconName}
+                        color="#000000"
+                        size='32px'
+                    />
+                </StyledComponents.CardHeaderIcon> 
             </StyledComponents.CardHeader> 
             <StyledComponents.CardBody> 
                 {props.children}
