@@ -13,7 +13,44 @@ export const Employees = (props) => {
                 <StyledComponents.EmployeesHeadDelete />
             </StyledComponents.EmployeesHead>
 
-            <StyledComponents.EmployeesRow>
+            {
+                props.employees.map(employee => {
+                    return (
+                        <StyledComponents.EmployeesRow key={employee.id}>
+                            <StyledComponents.EmployeesRowName>{employee.name}</StyledComponents.EmployeesRowName>
+                            <StyledComponents.EmployeesRowHours>{employee.hours}</StyledComponents.EmployeesRowHours>   
+                            <StyledComponents.EmployeesRowActualTipValue>{employee.actualTipValue}</StyledComponents.EmployeesRowActualTipValue>
+                            <StyledComponents.EmployeesRowRoundedTipValue>{employee.roundedTipValue}</StyledComponents.EmployeesRowRoundedTipValue>
+                            <StyledComponents.EmployeesRowBillInformation>
+                                <StyledComponents.EmployeesRowBillInformationHead>
+                                    Bill Information
+                                    <StyledComponents.EmployeesRowBillInformationHeadIcon>
+                                        <Shared.Icon 
+                                            name="expandLess"
+                                            color="#ffffff"
+                                            size="24px"
+                                        />
+                                    </StyledComponents.EmployeesRowBillInformationHeadIcon>
+                                </StyledComponents.EmployeesRowBillInformationHead>
+                                <StyledComponents.EmployeesRowBillInformationBody show={employee.showBillInformation}>
+                                    <StyledComponents.EmployeesRowBillInformationBodyRow>
+                                        <StyledComponents.EmployeesRowBillInformationBodyRowItem>test</StyledComponents.EmployeesRowBillInformationBodyRowItem>
+                                        <StyledComponents.EmployeesRowBillInformationBodyRowItem>test</StyledComponents.EmployeesRowBillInformationBodyRowItem>
+                                    </StyledComponents.EmployeesRowBillInformationBodyRow>
+                                </StyledComponents.EmployeesRowBillInformationBody>
+                            </StyledComponents.EmployeesRowBillInformation>
+                            <StyledComponents.EmployeesRowDelete>
+                                <Shared.Icon 
+                                    name="trash"
+                                    color="#ffffff"
+                                    size="24px"
+                                />
+                            </StyledComponents.EmployeesRowDelete>
+                        </StyledComponents.EmployeesRow>
+                    )
+                })
+            }
+            {/* <StyledComponents.EmployeesRow>
                 <StyledComponents.EmployeesRowName>John Doe</StyledComponents.EmployeesRowName>
                 <StyledComponents.EmployeesRowHours>00.00</StyledComponents.EmployeesRowHours>   
                 <StyledComponents.EmployeesRowActualTipValue>00.00</StyledComponents.EmployeesRowActualTipValue>
@@ -69,7 +106,11 @@ export const Employees = (props) => {
                         size="24px"
                     />
                 </StyledComponents.EmployeesRowDelete>
-            </StyledComponents.EmployeesRow>
+            </StyledComponents.EmployeesRow> */}
         </StyledComponents.Employees>
     )
+}
+
+Employees.defaultProps = {
+    employees: []
 }

@@ -2,7 +2,6 @@ import * as StyledComponents from './styled-components';
 import * as paths from './paths';
 
 export const Icon = (props) => {
-    console.log(paths.personAdd)
     const getPath = (name) => {
         return paths[name]
     }

@@ -114,6 +114,7 @@ export const EmployeesRowBillInformationHeadIcon = styled.div`
 `
 
 export const EmployeesRowBillInformationBody = styled.div`
+    display: ${props => props.show ? 'display' : 'none'};
     margin-top: 16px;
     width: 128px;
 `
