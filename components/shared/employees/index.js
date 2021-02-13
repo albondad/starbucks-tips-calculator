@@ -21,7 +21,7 @@ export const Employees = (props) => {
                             <StyledComponents.EmployeesRowHours>{employee.hours}</StyledComponents.EmployeesRowHours>   
                             <StyledComponents.EmployeesRowActualTipValue>{employee.actualTipValue}</StyledComponents.EmployeesRowActualTipValue>
                             <StyledComponents.EmployeesRowRoundedTipValue>{employee.roundedTipValue}</StyledComponents.EmployeesRowRoundedTipValue>
-                            <StyledComponents.EmployeesRowBillInformation>
+                            <StyledComponents.EmployeesRowBillInformation onClick={employee.handleBillInformationOnClick}>
                                 <StyledComponents.EmployeesRowBillInformationHead>
                                     Bill Information
                                     <StyledComponents.EmployeesRowBillInformationHeadIcon>
