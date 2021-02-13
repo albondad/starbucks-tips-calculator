@@ -1,4 +1,4 @@
-const getTotalTips = (bills) => {
+export const getTotalTips = (bills) => {
     return (
         bills[1] * 1 + 
         bills[5] * 5 + 
@@ -7,6 +7,4 @@ const getTotalTips = (bills) => {
         bills[50] * 50 + 
         bills[100] * 100
     )
-}
-
-module.exports = getTotalTips;
+};

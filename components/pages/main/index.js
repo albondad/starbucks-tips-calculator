@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import * as Shared from '../../shared';
 import * as StyledComponents from './styled-components';
+import * as utilities from '../../../utilities';
 import * as uuid from 'uuid'
 
 export const Main = () => {
@@ -119,13 +120,24 @@ export const Main = () => {
     }
 
     const handleUpdateButtonOnClick = () => {
-        console.log('handleUpdateButtonOnClick', 'clicked')
+        const bills = {
+            1: fivesInputValue,
+            5: fivesInputValue,
+            10: tensInputValue,
+            20: twentysInputValue,
+            50: fiftysInputValue,
+            100: hundredsInputValue
+        }
+
+        const newTotalTips = utilities.getTotalTips(bills);
+
         setOnesInputValue('');
         setFivesInputValue('');
         setTensInputValue('');
         setTwentysInputValue('');
         setFiftysInputValue('');
         setHundredsInputValue('');
+        setTotalTips(newTotalTips);
     }
 
     const handleBillInformationOnClick = (id) => {
