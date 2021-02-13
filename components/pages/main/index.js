@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import * as Shared from '../../shared';
 import * as StyledComponents from './styled-components';
 import * as uuid from 'uuid'
@@ -35,6 +35,21 @@ export const Main = () => {
         },
     ])
 
+    useEffect(() => {
+        udpateEmployees();
+    }, [employees.length])
+
+    //utility
+    const udpateEmployees = () => {
+        const newEmployees = [...employees];
+        newEmployees.forEach(employee => {
+            employee.handleBillInformationOnClick = () => handleBillInformationOnClick(employee.id)
+        })
+        setEmployees(newEmployees);
+    }
+    
+
+    //handlers
     const handleNameInputOnChange = (event) => {
         console.log('handleNameInputOnChange', event.target.value);
         const newNameInputValue = event.target.value;
@@ -86,10 +101,16 @@ export const Main = () => {
     const handleAddButtonOnClick = () => {
         console.log('handleAddButtonOnClick', 'clicked');
         const newEmployees = [...employees];
+
+        const id = uuid.v4();
+        const name = nameInputValue;
+        const hours = hoursInputValue;
         const employee = {
             id: uuid.v4(),
             name: nameInputValue,
             hours: hoursInputValue,
+            showBillInformation: false,
+            //handleBillInformationOnClick: () => {handleBillInformationOnClick(id)}
         }
         newEmployees.push(employee);
         setNameInputValue('');
@@ -105,6 +126,20 @@ export const Main = () => {
         setTwentysInputValue('');
         setFiftysInputValue('');
         setHundredsInputValue('');
+    }
+
+    const handleBillInformationOnClick = (id) => {
+        console.log('handleBillInformationOnClick', id);
+        console.log('handleBillInformationOnClick', employees);
+        const newEmployees = [...employees];
+        const index = newEmployees.findIndex(employee => employee.id === id);
+        console.log(newEmployees[index]);
+        newEmployees[index].showBillInformation = !newEmployees[index].showBillInformation;
+        setEmployees(newEmployees);
+    }
+
+    const handleDeleteOnClick = (id) => {
+        
     }
 
     return (
