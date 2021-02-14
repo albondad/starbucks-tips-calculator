@@ -114,7 +114,7 @@ export const Main = () => {
 
     const handleUpdateButtonOnClick = () => {
         const bills = {
-            1: fivesInputValue,
+            1: onesInputValue,
             5: fivesInputValue,
             10: tensInputValue,
             20: twentysInputValue,
@@ -124,13 +124,8 @@ export const Main = () => {
 
         const newTotalTips = utilities.getTotalTips(bills);
 
-        setOnesInputValue('');
-        setFivesInputValue('');
-        setTensInputValue('');
-        setTwentysInputValue('');
-        setFiftysInputValue('');
-        setHundredsInputValue('');
         setTotalTips(newTotalTips);
+        
     }
 
     const handleBillInformationOnClick = (id) => {
