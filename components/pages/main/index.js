@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Shared from '../../shared';
 import * as StyledComponents from './styled-components';
 import * as utilities from '../../../utilities';
@@ -17,7 +17,7 @@ export const Main = () => {
     const [totalTips, setTotalTips] = useState(0);
     const [totalActualTipValues, setTotalActualTipValues] = useState('00');
     const [totalRoundedTipValues, setTotalRoundedTipValues] = useState('00.00');
-    const [EmployeeList, setEmployeeList] = useState([
+    const [employeeList, setEmployeeList] = useState([
         {
             id: '1',
             name: 'John Doe',
@@ -32,8 +32,16 @@ export const Main = () => {
             actualTipValue: 0,
             roundedTipValue: 0
         },
-    ])
-    
+    ]);
+
+    useEffect(() => {
+        updateTotalHours();
+    })
+
+    const updateTotalHours = () => {
+        const newTotalHours = utilities.getTotalHours(employeeList);
+        setTotalHours(newTotalHours);
+    }
 
     //handlers
     const handleNameInputOnChange = (event) => {
@@ -86,7 +94,7 @@ export const Main = () => {
 
     const handleAddButtonOnClick = () => {
         console.log('handleAddButtonOnClick', 'clicked');
-        const newEmployeeList = [...EmployeeList];
+        const newemployeeList = [...employeeList];
 
         const id = uuid.v4();
         const name = nameInputValue;
@@ -98,10 +106,10 @@ export const Main = () => {
             showBillInformation: false,
             //handleBillInformationOnClick: () => {handleBillInformationOnClick(id)}
         }
-        newEmployeeList.push(employee);
+        newemployeeList.push(employee);
         setNameInputValue('');
         setHoursInputValue('');
-        setEmployeeList(newEmployeeList);
+        setEmployeeList(newemployeeList);
     }
 
     const handleUpdateButtonOnClick = () => {
@@ -127,12 +135,12 @@ export const Main = () => {
 
     const handleBillInformationOnClick = (id) => {
         console.log('handleBillInformationOnClick', id);
-        console.log('handleBillInformationOnClick', EmployeeList);
-        const newEmployeeList = [...EmployeeList];
-        const index = newEmployeeList.findIndex(employee => employee.id === id);
-        console.log(newEmployeeList[index]);
-        newEmployeeList[index].showBillInformation = !newEmployeeList[index].showBillInformation;
-        setEmployeeList(newEmployeeList);
+        console.log('handleBillInformationOnClick', employeeList);
+        const newemployeeList = [...employeeList];
+        const index = newemployeeList.findIndex(employee => employee.id === id);
+        console.log(newemployeeList[index]);
+        newemployeeList[index].showBillInformation = !newemployeeList[index].showBillInformation;
+        setEmployeeList(newemployeeList);
     }
 
     const handleDeleteOnClick = (id) => {
@@ -145,7 +153,7 @@ export const Main = () => {
             <StyledComponents.MainForms>
                 <StyledComponents.MainFormsItem>
                         <Shared.Card
-                            label='Add EmployeeList'
+                            label='Add employeeList'
                             iconName="personAdd"
                         >
                         <StyledComponents.MainFormsItemBody>
@@ -270,10 +278,10 @@ export const Main = () => {
             </StyledComponents.MainStatistics>
             <StyledComponents.MainEmployees>
                 <Shared.Card
-                    label="EmployeeList"
+                    label="employeeList"
                     iconName='groups'
                 >
-                    <Shared.EmployeeList list={EmployeeList}/>
+                    <Shared.EmployeeList list={employeeList}/>
                 </Shared.Card>
             </StyledComponents.MainEmployees>
         </StyledComponents.Main>
