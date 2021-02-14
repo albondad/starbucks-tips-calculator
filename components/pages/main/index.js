@@ -38,6 +38,8 @@ export const Main = () => {
 
     useEffect(() => {
         updateTotalHours();
+        updateTotalActualTipValues();
+        updateTotalRoundedTipValues();
     })
 
     useDeepCompareEffect(() => {
@@ -48,6 +50,17 @@ export const Main = () => {
     const updateTotalHours = () => {
         const newTotalHours = utilities.getTotalHours(employeeList);
         setTotalHours(newTotalHours);
+    }
+
+    const updateTotalRoundedTipValues = () => {
+        console.log(employeeList);
+        const newTotalRoundedTipValues = utilities.getTotalRoundedTipValues(employeeList);
+        setTotalRoundedTipValues(newTotalRoundedTipValues);
+    }
+
+    const updateTotalActualTipValues = () => {
+        const newTotalActualTipValues = utilities.getTotalActualTipValues(employeeList);
+        setTotalActualTipValues(newTotalActualTipValues);
     }
 
     const updateEmployees = () => {
@@ -116,7 +129,9 @@ export const Main = () => {
         const employee = {
             id,
             name, 
-            hours
+            hours,
+            roundedTipValue: 0,
+            actualTipValue: 0
         }
         newemployeeList.push(employee);
         setNameInputValue('');

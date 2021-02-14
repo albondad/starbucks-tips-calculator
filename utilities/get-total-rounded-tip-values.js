@@ -1,5 +1,5 @@
 export const getTotalRoundedTipValues = (employees) => {
-    totalRoundedTipValues = 0;
+    let totalRoundedTipValues = 0;
     employees.forEach(employee => totalRoundedTipValues += employee.roundedTipValue);
     return totalRoundedTipValues;
 }

@@ -110,3 +110,5 @@ export * from './get-total-hours';
 export * from './get-total-tips';
 export * from './get-employees-with-actual-tip-values';
 export * from './get-employees-with-rounded-tip-values';
+export * from './get-total-actual-tip-values';
+export * from './get-total-rounded-tip-values';
