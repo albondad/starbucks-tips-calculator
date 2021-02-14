@@ -38,14 +38,11 @@ export const Main = () => {
 
     useDeepCompareEffect(() => {
         updateEmployeeList();
-    }, [employeeList])
-
-    useEffect(() => {
         updateTotalHours();
         updateTotalActualTipValues();
         updateTotalRoundedTipValues();
         updateTipRate();
-    })
+    }, [employeeList, totalHours, totalActualTipValues, totalRoundedTipValues, tipRate, totalTips])
 
     //utility functions
     const updateTotalHours = () => {
