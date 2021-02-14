@@ -108,3 +108,5 @@
 
 export * from './get-total-hours';
 export * from './get-total-tips';
+export * from './get-employees-with-actual-tip-values';
+export * from './get-employees-with-rounded-tip-values';

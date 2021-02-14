@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect'
 import * as Shared from '../../shared';
 import * as StyledComponents from './styled-components';
 import * as utilities from '../../../utilities';
@@ -17,6 +18,7 @@ export const Main = () => {
     const [totalTips, setTotalTips] = useState(0);
     const [totalActualTipValues, setTotalActualTipValues] = useState('00');
     const [totalRoundedTipValues, setTotalRoundedTipValues] = useState('00.00');
+    const [tipRate, setTipRate] = useState(0);
     const [employeeList, setEmployeeList] = useState([
         {
             id: '1',
@@ -38,10 +40,21 @@ export const Main = () => {
         updateTotalHours();
     })
 
+    useDeepCompareEffect(() => {
+        updateEmployees();
+    }, [employeeList])
+
     //utility functions
     const updateTotalHours = () => {
         const newTotalHours = utilities.getTotalHours(employeeList);
         setTotalHours(newTotalHours);
+    }
+
+    const updateEmployees = () => {
+        let newEmployeeList = [...employeeList];
+        newEmployeeList = utilities.getEmployeesWithActualTipValues(newEmployeeList, tipRate);
+        newEmployeeList = utilities.getEmployeesWithRoundedTipValues(newEmployeeList, tipRate);
+        setEmployeeList(newEmployeeList);
     }
 
     //handler functions

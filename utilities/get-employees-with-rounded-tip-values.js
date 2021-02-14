@@ -13,8 +13,7 @@ export const getEmployeesWithRoundedTipValues = (employees, tipRate) => {
         }
 
         employeesWithRoundedTipValue.push({
-            name: employee.name,
-            hours: employee.hours,
+            ...employee,
             roundedTipValue: roundedTipValue
         })
     });

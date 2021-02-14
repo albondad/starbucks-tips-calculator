@@ -5,8 +5,7 @@ export const getEmployeesWithActualTipValues = (employees, tipRate) => {
         const actualTipValue = employee.hours * tipRate;
 
         employeesWithActualTipValues.push({
-            name: employee.name,
-            hours: employee.hours,
+            ...employee,
             actualTipValue: actualTipValue
         })
     });
