@@ -1,4 +1,4 @@
-const compareTotalTipsToTotalActualTipValues = (totalTips, totalActualTipValues) => {
+export const compareTotalTipsToTotalActualTipValues = (totalTips, totalActualTipValues) => {
     const difference = Math.abs(totalTips - totalActualTipValues);
 
     if (difference <= 0.25) {
@@ -11,5 +11,3 @@ const compareTotalTipsToTotalActualTipValues = (totalTips, totalActualTipValues)
         return 'very inaccurate';
     }
 }
-
-module.exports = compareTotalTipsToTotalActualTipValues;

@@ -1,4 +1,4 @@
-const getEmployeesWithRoundedTipValues = (employees, tipRate) => {
+export const getEmployeesWithRoundedTipValues = (employees, tipRate) => {
     const employeesWithRoundedTipValue = [];
     
     employees.forEach(employee => {
@@ -21,5 +21,3 @@ const getEmployeesWithRoundedTipValues = (employees, tipRate) => {
 
     return employeesWithRoundedTipValue;
 }
-
-module.exports = getEmployeesWithRoundedTipValues;

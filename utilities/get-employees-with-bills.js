@@ -1,4 +1,4 @@
-const getEmplpyeesWithbills = (employees, bills) => {
+export const getEmplpyeesWithbills = (employees, bills) => {
     const employeesWithBills = [...employees];
     const leftOverBills = {...bills}
 
@@ -46,5 +46,3 @@ const getEmplpyeesWithbills = (employees, bills) => {
 
     return employeesWithBills;
 }
-
-module.exports = getEmplpyeesWithbills;

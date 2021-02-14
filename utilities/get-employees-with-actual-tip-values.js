@@ -1,4 +1,4 @@
-const getEmployeesWithActualTipValues = (employees, tipRate) => {
+export const getEmployeesWithActualTipValues = (employees, tipRate) => {
     const employeesWithActualTipValues = [];
     
     employees.forEach(employee => {
@@ -13,5 +13,3 @@ const getEmployeesWithActualTipValues = (employees, tipRate) => {
 
     return employeesWithActualTipValues;
 }
-
-module.exports = getEmployeesWithActualTipValues;
