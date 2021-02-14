@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import * as Shared from '../../shared';
 import * as StyledComponents from './styled-components';
 import * as utilities from '../../../utilities';
@@ -14,40 +14,25 @@ export const Main = () => {
     const [fiftysInputValue, setFiftysInputValue] = useState('');
     const [hundredsInputValue, setHundredsInputValue] = useState('');
     const [totalHours, setTotalHours] = useState('00');
-    const [totalTips, setTotalTips] = useState('00.00');
+    const [totalTips, setTotalTips] = useState(0);
     const [totalActualTipValues, setTotalActualTipValues] = useState('00');
     const [totalRoundedTipValues, setTotalRoundedTipValues] = useState('00.00');
-    const [employees, setEmployees] = useState([
+    const [EmployeeList, setEmployeeList] = useState([
         {
             id: '1',
             name: 'John Doe',
-            hours: '00.00',
-            showBillInformation: true,
-            actualTipValue: '00.00',
-            roundedTipValue: '00.00'
+            hours: 0,
+            actualTipValue: 0,
+            roundedTipValue: 0
         },
         {
             id: '2',
             name: 'Jane Doe',
-            hours: '00.00',
-            showBillInformation: false,
-            actualTipValue: '00.00',
-            roundedTipValue: '00.00'
+            hours: 0,
+            actualTipValue: 0,
+            roundedTipValue: 0
         },
     ])
-
-    useEffect(() => {
-        udpateEmployees();
-    }, [employees.length])
-
-    //utility
-    const udpateEmployees = () => {
-        const newEmployees = [...employees];
-        newEmployees.forEach(employee => {
-            employee.handleBillInformationOnClick = () => handleBillInformationOnClick(employee.id)
-        })
-        setEmployees(newEmployees);
-    }
     
 
     //handlers
@@ -101,7 +86,7 @@ export const Main = () => {
 
     const handleAddButtonOnClick = () => {
         console.log('handleAddButtonOnClick', 'clicked');
-        const newEmployees = [...employees];
+        const newEmployeeList = [...EmployeeList];
 
         const id = uuid.v4();
         const name = nameInputValue;
@@ -113,10 +98,10 @@ export const Main = () => {
             showBillInformation: false,
             //handleBillInformationOnClick: () => {handleBillInformationOnClick(id)}
         }
-        newEmployees.push(employee);
+        newEmployeeList.push(employee);
         setNameInputValue('');
         setHoursInputValue('');
-        setEmployees(newEmployees);
+        setEmployeeList(newEmployeeList);
     }
 
     const handleUpdateButtonOnClick = () => {
@@ -142,12 +127,12 @@ export const Main = () => {
 
     const handleBillInformationOnClick = (id) => {
         console.log('handleBillInformationOnClick', id);
-        console.log('handleBillInformationOnClick', employees);
-        const newEmployees = [...employees];
-        const index = newEmployees.findIndex(employee => employee.id === id);
-        console.log(newEmployees[index]);
-        newEmployees[index].showBillInformation = !newEmployees[index].showBillInformation;
-        setEmployees(newEmployees);
+        console.log('handleBillInformationOnClick', EmployeeList);
+        const newEmployeeList = [...EmployeeList];
+        const index = newEmployeeList.findIndex(employee => employee.id === id);
+        console.log(newEmployeeList[index]);
+        newEmployeeList[index].showBillInformation = !newEmployeeList[index].showBillInformation;
+        setEmployeeList(newEmployeeList);
     }
 
     const handleDeleteOnClick = (id) => {
@@ -160,7 +145,7 @@ export const Main = () => {
             <StyledComponents.MainForms>
                 <StyledComponents.MainFormsItem>
                         <Shared.Card
-                            label='Add Employees'
+                            label='Add EmployeeList'
                             iconName="personAdd"
                         >
                         <StyledComponents.MainFormsItemBody>
@@ -285,10 +270,10 @@ export const Main = () => {
             </StyledComponents.MainStatistics>
             <StyledComponents.MainEmployees>
                 <Shared.Card
-                    label="Employees"
+                    label="EmployeeList"
                     iconName='groups'
                 >
-                    <Shared.Employees employees={employees}/>
+                    <Shared.EmployeeList list={EmployeeList}/>
                 </Shared.Card>
             </StyledComponents.MainEmployees>
         </StyledComponents.Main>

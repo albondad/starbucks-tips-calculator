@@ -1,55 +1,55 @@
 import styled from 'styled-components';
 
-export const Employees = styled.div`
+export const EmployeeListItemj = styled.div`
 `
 
-export const EmployeesHead = styled.div`
+export const EmployeeListItemjHead = styled.div`
     display: flex;
     padding-right: 20px;
     padding-left: 20px;
 `
 
-export const EmployeesHeadName = styled.div`
+export const EmployeeListItemjHeadName = styled.div`
     flex-basis: 0;
     flex-grow: 1;
     font-size: 12px;
     font-weight: 700;
 `
 
-export const EmployeesHeadHours = styled.div`
+export const EmployeeListItemjHeadHours = styled.div`
     flex-basis: 0;
     flex-grow: 1;
     font-size: 12px;
     font-weight: 700;
 `
 
-export const EmployeesHeadActualTipValue = styled.div`
+export const EmployeeListItemjHeadActualTipValue = styled.div`
     flex-basis: 0;
     flex-grow: 1;
     font-size: 12px;
     font-weight: 700;
 `
 
-export const EmployeesHeadRoundedTipValue = styled.div`
+export const EmployeeListItemjHeadRoundedTipValue = styled.div`
     flex-basis: 0;
     flex-grow: 1;
     font-size: 12px;
     font-weight: 700;
 `
 
-export const EmployeesHeadBillInformation = styled.div`
+export const EmployeeListItemjHeadBillInformation = styled.div`
     flex-basis: 0;
     flex-grow: 1.5;
     font-size: 12px;
     font-weight: 700;
 `
 
-export const EmployeesHeadDelete = styled.div`
+export const EmployeeListItemjHeadDelete = styled.div`
     width: 24px;
     height: 24px;
 `
 
-export const EmployeesRow = styled.div`
+export const EmployeeListItem = styled.div`
     display: flex;
     margin-top: 16px;
     border-radius: 8px;
@@ -57,7 +57,7 @@ export const EmployeesRow = styled.div`
     padding: 20px
 `
 
-export const EmployeesRowName = styled.div`
+export const EmployeeListItemName = styled.div`
     display: flex;
     flex-basis: 0;
     flex-grow: 1;
@@ -66,7 +66,7 @@ export const EmployeesRowName = styled.div`
     color: #ffffff;
 `
 
-export const EmployeesRowHours = styled.div`
+export const EmployeeListItemHours = styled.div`
     display: flex;
     flex-basis: 0;
     flex-grow: 1;
@@ -75,7 +75,7 @@ export const EmployeesRowHours = styled.div`
     color: #ffffff;
 `
 
-export const EmployeesRowActualTipValue = styled.div`
+export const EmployeeListItemActualTipValue = styled.div`
     display: flex;
     flex-basis: 0;
     flex-grow: 1;
@@ -84,7 +84,7 @@ export const EmployeesRowActualTipValue = styled.div`
     color: #ffffff;
 `
 
-export const EmployeesRowRoundedTipValue = styled.div`
+export const EmployeeListItemRoundedTipValue = styled.div`
     display: flex;
     flex-basis: 0;
     flex-grow: 1;
@@ -93,13 +93,13 @@ export const EmployeesRowRoundedTipValue = styled.div`
     color: #ffffff;
 `
 
-export const EmployeesRowBillInformation = styled.div`
+export const EmployeeListItemBillInformation = styled.div`
     flex-basis: 0;
     flex-grow: 1.5;
     color: #ffffff;
 `
 
-export const EmployeesRowBillInformationHead = styled.div`
+export const EmployeeListItemBillInformationHead = styled.div`
     display: flex;
     flex-basis: 0;
     flex-grow: 2;
@@ -107,23 +107,23 @@ export const EmployeesRowBillInformationHead = styled.div`
     color: #ffffff;
 `
 
-export const EmployeesRowBillInformationHeadIcon = styled.div`
+export const EmployeeListItemBillInformationHeadIcon = styled.div`
     display: flex;
     align-items: center;
     margin-left: 4px;
 `
 
-export const EmployeesRowBillInformationBody = styled.div`
+export const EmployeeListItemBillInformationBody = styled.div`
     display: ${props => props.show ? 'display' : 'none'};
     margin-top: 16px;
     width: 128px;
 `
 
-export const EmployeesRowBillInformationBodyRow = styled.div`
+export const EmployeeListItemBillInformationBodyRow = styled.div`
     display: flex;
 `
 
-export const EmployeesRowBillInformationBodyRowItem = styled.div`
+export const EmployeeListItemBillInformationBodyRowItem = styled.div`
     display: flex;
     flex-grow: 1;
 
@@ -132,7 +132,7 @@ export const EmployeesRowBillInformationBodyRowItem = styled.div`
     }
 `
 
-export const EmployeesRowDelete = styled.div`
+export const EmployeeListItemDelete = styled.div`
     width: 24px;
     height: 24px;
 `
