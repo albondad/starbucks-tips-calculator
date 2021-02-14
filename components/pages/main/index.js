@@ -38,12 +38,13 @@ export const Main = () => {
         updateTotalHours();
     })
 
+    //utility functions
     const updateTotalHours = () => {
         const newTotalHours = utilities.getTotalHours(employeeList);
         setTotalHours(newTotalHours);
     }
 
-    //handlers
+    //handler functions
     const handleNameInputOnChange = (event) => {
         console.log('handleNameInputOnChange', event.target.value);
         const newNameInputValue = event.target.value;
@@ -100,11 +101,9 @@ export const Main = () => {
         const name = nameInputValue;
         const hours = hoursInputValue;
         const employee = {
-            id: uuid.v4(),
-            name: nameInputValue,
-            hours: hoursInputValue,
-            showBillInformation: false,
-            //handleBillInformationOnClick: () => {handleBillInformationOnClick(id)}
+            id,
+            name, 
+            hours
         }
         newemployeeList.push(employee);
         setNameInputValue('');
@@ -125,7 +124,7 @@ export const Main = () => {
         const newTotalTips = utilities.getTotalTips(bills);
 
         setTotalTips(newTotalTips);
-        
+
     }
 
     const handleBillInformationOnClick = (id) => {
