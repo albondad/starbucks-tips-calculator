@@ -22,6 +22,7 @@ export const EmployeeList = (props) => {
                             hours={item.hours}
                             actualTipValue={item.actualTipValue}
                             roundedTipValue={item.roundedTipValue}
+                            bills={item.bills}
                         />
                     )
                 })

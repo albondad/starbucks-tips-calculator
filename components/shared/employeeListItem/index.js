@@ -29,8 +29,28 @@ export const EmployeeListItem = (props) => {
                 </StyledComponents.EmployeeListItemBillInformationHead>
                 <StyledComponents.EmployeeListItemBillInformationBody show={showBillInformation}>
                     <StyledComponents.EmployeeListItemBillInformationBodyRow>
-                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>test</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
-                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>test</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>100</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>{props.bills[100]}</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                    </StyledComponents.EmployeeListItemBillInformationBodyRow>
+                    <StyledComponents.EmployeeListItemBillInformationBodyRow>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>50</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>{props.bills[50]}</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                    </StyledComponents.EmployeeListItemBillInformationBodyRow>
+                    <StyledComponents.EmployeeListItemBillInformationBodyRow>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>20</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>{props.bills[20]}</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                    </StyledComponents.EmployeeListItemBillInformationBodyRow>
+                    <StyledComponents.EmployeeListItemBillInformationBodyRow>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>10</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>{props.bills[10]}</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                    </StyledComponents.EmployeeListItemBillInformationBodyRow>
+                    <StyledComponents.EmployeeListItemBillInformationBodyRow>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>5</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>{props.bills[5]}</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                    </StyledComponents.EmployeeListItemBillInformationBodyRow>
+                    <StyledComponents.EmployeeListItemBillInformationBodyRow>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>1</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
+                        <StyledComponents.EmployeeListItemBillInformationBodyRowItem>{props.bills[1]}</StyledComponents.EmployeeListItemBillInformationBodyRowItem>
                     </StyledComponents.EmployeeListItemBillInformationBodyRow>
                 </StyledComponents.EmployeeListItemBillInformationBody>
             </StyledComponents.EmployeeListItemBillInformation>

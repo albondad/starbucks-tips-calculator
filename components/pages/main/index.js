@@ -15,6 +15,14 @@ export const Main = () => {
     const [fiftysInputValue, setFiftysInputValue] = useState('');
     const [hundredsInputValue, setHundredsInputValue] = useState('');
     const [totalHours, setTotalHours] = useState('00');
+    const [bills, setBills] = useState({
+        1: 0,
+        5: 0,
+        10: 0,
+        20: 0,
+        50: 0,
+        100: 0
+    })
     const [totalTips, setTotalTips] = useState(0);
     const [totalActualTipValues, setTotalActualTipValues] = useState('00');
     const [totalRoundedTipValues, setTotalRoundedTipValues] = useState('00.00');
@@ -25,14 +33,30 @@ export const Main = () => {
             name: 'John Doe',
             hours: 0,
             actualTipValue: 0,
-            roundedTipValue: 0
+            roundedTipValue: 0,
+            bills: {
+                1: 0,
+                5: 0,
+                10: 0,
+                20: 0,
+                50: 0,
+                100: 0
+            }
         },
         {
             id: '2',
             name: 'Jane Doe',
             hours: 0,
             actualTipValue: 0,
-            roundedTipValue: 0
+            roundedTipValue: 0,
+            bills: {
+                1: 0,
+                5: 0,
+                10: 0,
+                20: 0,
+                50: 0,
+                100: 0
+            }
         },
     ]);
 
@@ -70,8 +94,9 @@ export const Main = () => {
         let newEmployeeList = [...employeeList];
         newEmployeeList = utilities.getEmployeesWithActualTipValues(newEmployeeList, tipRate);
         newEmployeeList = utilities.getEmployeesWithRoundedTipValues(newEmployeeList, tipRate);
+        newEmployeeList = utilities.getEmplpyeesWithbills(newEmployeeList, bills)
         setEmployeeList(newEmployeeList);
-        console.log('newTipRate', tipRate);
+        console.log('newEmployeeList', newEmployeeList);
     }
 
     //handler functions
@@ -135,7 +160,15 @@ export const Main = () => {
             name, 
             hours,
             roundedTipValue: 0,
-            actualTipValue: 0
+            actualTipValue: 0,
+            bills: {
+                1: 0,
+                5: 0,
+                10: 0,
+                20: 0,
+                50: 0,
+                100: 0
+            }
         }
         newemployeeList.push(employee);
         setNameInputValue('');
@@ -144,7 +177,7 @@ export const Main = () => {
     }
 
     const handleUpdateButtonOnClick = () => {
-        const bills = {
+        const newBills = {
             1: onesInputValue,
             5: fivesInputValue,
             10: tensInputValue,
@@ -153,9 +186,10 @@ export const Main = () => {
             100: hundredsInputValue
         }
 
-        const newTotalTips = utilities.getTotalTips(bills);
+        const newTotalTips = utilities.getTotalTips(newBills);
 
         setTotalTips(newTotalTips);
+        setBills(newBills);
 
     }
 

@@ -113,3 +113,4 @@ export * from './get-employees-with-rounded-tip-values';
 export * from './get-total-actual-tip-values';
 export * from './get-total-rounded-tip-values';
 export * from './get-tip-rate';
+export * from './get-employees-with-bills';
