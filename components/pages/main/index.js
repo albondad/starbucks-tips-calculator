@@ -53,7 +53,6 @@ export const Main = () => {
     }
 
     const updateTotalRoundedTipValues = () => {
-        console.log(employeeList);
         const newTotalRoundedTipValues = utilities.getTotalRoundedTipValues(employeeList);
         setTotalRoundedTipValues(newTotalRoundedTipValues);
     }
