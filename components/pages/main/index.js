@@ -49,7 +49,6 @@ export const Main = () => {
 
     //utility functions
     const updateTotalHours = () => {
-        console.log('test')
         const newTotalHours = utilities.getTotalHours(employeeList);
         setTotalHours(newTotalHours);
     }
