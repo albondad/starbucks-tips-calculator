@@ -36,18 +36,20 @@ export const Main = () => {
         },
     ]);
 
+    useDeepCompareEffect(() => {
+        updateEmployeeList();
+    }, [employeeList])
+
     useEffect(() => {
         updateTotalHours();
         updateTotalActualTipValues();
         updateTotalRoundedTipValues();
+        updateTipRate();
     })
-
-    useDeepCompareEffect(() => {
-        updateEmployees();
-    }, [employeeList])
 
     //utility functions
     const updateTotalHours = () => {
+        console.log('test')
         const newTotalHours = utilities.getTotalHours(employeeList);
         setTotalHours(newTotalHours);
     }
@@ -62,11 +64,18 @@ export const Main = () => {
         setTotalActualTipValues(newTotalActualTipValues);
     }
 
-    const updateEmployees = () => {
+    const updateTipRate = () => {
+        const newTipRate = utilities.getTipRate(totalTips, totalHours);
+        console.log('totalHours', totalHours);
+        setTipRate(newTipRate);
+    }
+
+    const updateEmployeeList = () => {
         let newEmployeeList = [...employeeList];
         newEmployeeList = utilities.getEmployeesWithActualTipValues(newEmployeeList, tipRate);
         newEmployeeList = utilities.getEmployeesWithRoundedTipValues(newEmployeeList, tipRate);
         setEmployeeList(newEmployeeList);
+        console.log('newTipRate', tipRate);
     }
 
     //handler functions
