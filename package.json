@@ -6,7 +6,7 @@
   "scripts": {
     "development": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
